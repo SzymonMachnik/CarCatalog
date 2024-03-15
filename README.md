@@ -1,2 +1,2 @@
-# carcatalog
+# Car Catalog
 My first website :)
