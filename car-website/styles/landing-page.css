@@ -1,0 +1,237 @@
+body {
+  background-color: rgb(252, 252, 252);
+}
+
+.main {
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+  align-items: center;
+
+  font-family: Roboto, Arial;
+}
+
+.main .title {
+  font-weight: 700;
+  padding-top: 30px;
+  font-size: 28px;
+  display: block;
+  margin-bottom: 20px;
+  color: rgb(0, 120, 255);
+}
+
+.main .filters {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  column-gap: 20px;
+  row-gap: 20px;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 1220px) {
+  .main .cars-grid {
+    grid-template-columns: 380px 380px;
+    column-gap: 15px;
+    row-gap: 15px;
+  }
+}
+.filter-button {
+  height: 45px;
+  cursor: pointer;
+  background-color: rgb(220, 220, 220);
+  color: rgb(60, 60, 60);
+  border: none;
+  border-radius: 150px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.15s;
+}
+.filter-button-clicked {
+  height: 45px;
+  cursor: pointer;
+  background-color: rgb(0, 120, 255);
+  color: white;
+  border: none;
+  border-radius: 150px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.filter-button:hover {
+  background-color: rgb(0, 120, 255);
+  color: white;
+}
+
+.main .cars-grid {
+  /* margin-right: 10px;
+  margin-left: 10px; */
+  margin-top: 20px;
+  justify-content: center;
+  display: grid;
+  column-gap: 20px;
+  row-gap: 20px;
+  grid-template-columns: 380px 380px 380px;
+}
+@media (max-width: 1220px) {
+  .main .cars-grid {
+    grid-template-columns: 380px 380px;
+    column-gap: 15px;
+    row-gap: 15px;
+  }
+}
+@media (max-width: 650px) {
+  .main .filters {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4%;
+  }
+  .main .filter-button:nth-child(3) {
+    grid-column: 1 / span 2; /* Umieść trzeci element w drugiej kolumnie */
+    justify-self: center; /* Wyśrodkuj element wzdłuż osi poziomej (opcjonalnie) */
+    width: 50%;
+
+  }
+}
+@media (max-width: 800px) {
+  .main .cars-grid {
+    grid-template-columns: 380px;
+  }
+}
+@media (max-width: 500px) {
+  .main .cars-grid {
+    grid-template-columns: 80%;
+  }
+}@media (max-width: 400px) {
+  .main .cars-grid {
+    grid-template-columns: 90%;
+  }
+}
+
+.main .car-layout {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgb(180, 180, 180);;
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);  
+  transition: box-shadow 0.3s;
+}
+ .car-layout-new {
+  position: relative;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid rgb(180, 180, 180);
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);  
+  transition: box-shadow 0.3s;
+
+  z-index: 1;
+}
+.car-layout:hover,
+.car-layout-new:hover {
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05), 0 0 10px rgba(0, 0, 0, 0.8);
+}
+.car-layout-new::before {
+  content: '';
+  position: absolute;
+  width: 88%;
+  height: 140%;
+  background-color: rgb(0, 120, 255);
+  animation: animate 10s linear infinite;
+  z-index: 1;
+}
+
+
+.car-layout-new::after {
+  content: '';
+  position: absolute;
+  inset: 1.2%;
+  background-color: white;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+
+@keyframes animate {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.inner-box {
+  display: block;
+  z-index: 2;
+  padding: 10px 0 0 0;
+  text-align: justify;
+  text-align: center;
+
+} 
+.car-photo  {
+  margin: 0 10px;
+  width: 90%;
+}
+
+.car-info-box {
+  margin: 0 16px;
+  height: 68px;
+  border: 1px;
+
+  border-color: rgb(180, 180, 180);
+  border-bottom-style: solid;
+  border-top-style: solid;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* column-gap: 10px; */
+  row-gap: 10px;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: center;
+  /* background-color: white; */
+}
+.car-info {
+  display: grid;
+  align-items: center; 
+  grid-template-columns: 20px auto;
+  font-size: 16px;
+  justify-content: center;
+}
+.car-button-box {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.car-more-button {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 20px 0;
+  width: 90%;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(0, 120, 255);
+  color: white;
+  border: none;
+  transition: box-shadow 0.3s;
+  text-decoration: none;
+}
+.car-more-button:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+.car-more-button:active {
+  background-color: rgba(0, 120, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8)
+}
+
+.icon {
+  height: 16px;
+}

@@ -1,0 +1,1 @@
+The {name} features a {horsepower} horsepower engine, with a fuel consumption of {fuelConsumption}. Can accommodate up to {seats} people, making it perfect for family outings. It comes with a {transmission} transmission. It is filled with modern technology, which will undoubtedly enhance your driving experience.
